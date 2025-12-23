@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zebra PDF Processor</title>
+  <script>
+    function showSpinner() {
+      document.getElementById("spinner").style.display = "block";
+      document.getElementById("btn").disabled = true;
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Zebra PDF → Label Generator</h2>
+
+  <form method="post" enctype="multipart/form-data" onsubmit="showSpinner()">
+    <input type="file" name="pdfs" accept="application/pdf" multiple required>
+    <br><br>
+    <button id="btn" type="submit">Process PDFs</button>
+  </form>
+
+  <div id="spinner" style="display:none;">
+    ⏳ Processing PDFs (queued)… please wait
+  </div>
+</body>
+</html>
